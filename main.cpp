@@ -6,8 +6,8 @@ int main()
     try
     {
         setlocale(LC_ALL, "ru");
-        MedicineRecordChild record("Витамин D3", 13, "Принимать после еды!");
-        //record.setExplanation("Принимать после еды 3 раза в день");
+        MedicineRecordChild record("Витамин D3", 13, "Принимать после еды, не глотать!");
+
         record.printMedicineInfo();
         record.setPlan(MedicineRecord::MORNING);
         record.setPlan(MedicineRecord::MIDDAY);
@@ -19,31 +19,6 @@ int main()
 
         cout << endl << "Значения: " << endl << record;
         if (record.planMatchesActual())
-        {
-            cout << endl << "План соответствует фактическому приему." << endl;
-        }
-        else
-        {
-            cout << endl << "План НЕ соответствует фактическому приему." << endl;
-        }
-
-        MedicineRecord record2(record, true);
-
-        record2.takeMedicine(MedicineRecord::AFTERNOON);
-
-        if (record2.takeMedicineAt(MedicineRecord::DAY))
-        {
-            cout << endl << "Нужно принять лекарство в это время." << endl;
-        }
-        else
-        {
-            cout << endl << "Не нужно принять лекарство в это время." << endl;
-        }
-        record2[MedicineRecord::MIDDAY];
-        record2[MedicineRecord::NIGHT];
-
-        cout << endl << "Демонстрация работы констурктора копирования." << endl << record2;
-        if (record2.planMatchesActual())
         {
             cout << endl << "План соответствует фактическому приему." << endl;
         }
