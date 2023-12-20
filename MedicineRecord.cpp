@@ -4,7 +4,7 @@ MedicineRecord::MedicineRecord(const char* name, int day) : day(day), dosagePerD
 {
     if (name == nullptr || strlen(name) == 0) 
     {
-        throw invalid_argument("Ошибка");
+        throw invalid_argument("пїЅпїЅпїЅпїЅпїЅпїЅ");
     }
 
     medicineName = new char[strlen(name) + 1];
@@ -54,17 +54,17 @@ int MedicineRecord::getDay() const
 
 void MedicineRecord::printMedicineInfo() const 
 {
-    cout << "Лекарство: " << medicineName << endl;
-    cout << "День приема: " << day << endl << endl;
-    cout << "План приема: " << endl;
+    cout << "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ: " << medicineName << endl;
+    cout << "пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ: " << day << endl << endl;
+    cout << "пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ: " << endl;
     for (int i = 0; i < CntPlans; i++) 
     {
-        cout << (plan[i] ? "Да" : "Нет") << " ";
+        cout << (plan[i] ? "пїЅпїЅ" : "пїЅпїЅпїЅ") << " ";
     }
     cout << endl;
-    cout << endl << "Отметка приема: " << endl;
+    cout << endl << "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ: " << endl;
     for (int i = 0; i < CntPlans; i++) {
-        cout << (actual[i] ? "Да" : "Нет") << " ";
+        cout << (actual[i] ? "пїЅпїЅ" : "пїЅпїЅпїЅ") << " ";
     }
     cout << endl;
 }
@@ -112,26 +112,27 @@ bool MedicineRecord::takeMedicineAt(TimeOfDay timeOfDay) const
         for (int i = 0; i < CntPlans; i++)
             return !plan[i] || (plan[i] && actual[timeOfDay]);
     }
+    cout << endl << "РџСЂРёРЅРёРјР°С‚СЊ РќР• РЅСѓР¶РЅРѕ" << endl;
     return false;
 }
 
 ostream& operator<<(ostream& out, const MedicineRecord& record) 
 {
-    out << "Лекарство: " << record.medicineName << endl;
-    out << "День приема: " << record.day << endl << endl;
+    out << "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ: " << record.medicineName << endl;
+    out << "пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ: " << record.day << endl << endl;
 
-    out << "План приема: " << endl;
+    out << "пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ: " << endl;
     for (int i = 0; i < MedicineRecord::CntPlans; i++) 
     {
-        out << (record.plan[i] ? "Да" : "Нет") << " ";
+        out << (record.plan[i] ? "пїЅпїЅ" : "пїЅпїЅпїЅ") << " ";
     }
 
     out << endl;
 
-    out << endl << "Отметка приема: " << endl;
+    out << endl << "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ: " << endl;
     for (int i = 0; i < MedicineRecord::CntPlans; i++) 
     {
-        out << (record.actual[i] ? "Да" : "Нет") << " ";
+        out << (record.actual[i] ? "пїЅпїЅ" : "пїЅпїЅпїЅ") << " ";
     }
 
     out << endl;
